@@ -6,6 +6,11 @@
         <entry key="..\:/Mobile/SSReaderKMS/app/src/main/res/layout/activity_content.xml" value="0.22056159420289856" />
         <entry key="..\:/Mobile/SSReaderKMS/app/src/main/res/layout/activity_main.xml" value="0.22056159420289856" />
         <entry key="..\:/Mobile/SSReaderKMS/app/src/main/res/layout/activity_register.xml" value="0.22056159420289856" />
+        <entry key="..\:/Mobile/SSReaderKMS/app/src/main/res/layout/fragment_profile.xml" value="0.22056159420289856" />
+        <entry key="..\:/Mobile/SSReaderKMS/app/src/main/res/layout/fragment_s_s_r_reader.xml" value="0.22056159420289856" />
+        <entry key="..\:/Mobile/SSReaderKMS/app/src/main/res/layout/news_items.xml" value="0.22056159420289856" />
+        <entry key="..\:/Mobile/SSReaderKMS/app/src/main/res/menu/bot_nav_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Mobile/SSReaderKMS/app/src/main/res/menu/search_menu.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>

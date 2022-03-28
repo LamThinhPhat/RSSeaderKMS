@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_bot_nav"
+    app:startDestination="@id/SSRReaderFragment">
+
+    <fragment
+        android:id="@+id/SSRReaderFragment"
+        android:name="com.example.ssreaderkms.SSRReaderFragment"
+        android:label="fragment_s_s_r_reader"
+        tools:layout="@layout/fragment_s_s_r_reader" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.ssreaderkms.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+</navigation>
