@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    tools:context=".ChangeInfoActivity">
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="15dp"
+        android:id="@+id/backToPrevEditInfo"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/ic_back_arrow" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="15dp"
+        card_view:cardCornerRadius="25dp"
+        android:layout_marginBottom="60dp"
+        android:layout_above="@+id/EditInfoLinear"
+        card_view:cardPreventCornerOverlap="false"
+        android:layout_centerInParent="true">
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_profile"
+            android:id="@+id/accountAvatarToEdit"
+            android:scaleType="fitXY">
+        </ImageView>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:src="@drawable/ic_edit">
+        </ImageView>
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:id="@+id/EditInfoLinear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/EditFullnameEdt"
+            android:layout_width="380dp"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:hint="Full name" />
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:id="@+id/editInfobtn"
+        android:layout_below="@+id/EditInfoLinear"
+        android:layout_marginTop="40dp"
+        android:layout_centerInParent="true"
+        android:layout_height="wrap_content"
+        android:text="Edit Info"/>
+</RelativeLayout>

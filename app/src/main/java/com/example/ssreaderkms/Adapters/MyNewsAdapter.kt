@@ -1,6 +1,7 @@
 package com.example.ssreaderkms.Adapters
 
 import android.app.Activity
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,11 +14,30 @@ import com.squareup.picasso.Picasso
 
 class MyNewsAdapter(private val NewsList : List<News>): RecyclerView.Adapter<MyNewsAdapter.ViewHolder>() {
 
+    var onMarkClick : ((News) -> Unit)? = null
+
     inner class ViewHolder(listItemView: View):RecyclerView.ViewHolder(listItemView)
     {
         val imageNews = listItemView.findViewById<ImageView>(R.id.imageNews)
         val titleNews = listItemView.findViewById<TextView>(R.id.titleNews)
         val descriptionNews = listItemView.findViewById<TextView>(R.id.descriptionNews)
+        val markIc = listItemView.findViewById<ImageView>(R.id.markImg)
+
+        init {
+            markIc.setOnClickListener {
+                Log.i("Image", markIc.drawable.constantState.toString())
+                if (markIc.drawable.constantState!!.equals(""))
+                {
+                    markIc.setImageResource(R.drawable.ic_unmark)
+                    onMarkClick?.invoke(NewsList[adapterPosition])
+                }
+                else
+                {
+                    markIc.setImageResource(R.drawable.ic_mark)
+                    onMarkClick?.invoke(NewsList[adapterPosition])
+                }
+            }
+        }
 
     }
 

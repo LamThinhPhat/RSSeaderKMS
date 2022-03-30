@@ -1,7 +1,10 @@
 package com.example.ssreaderkms.Models
 
+
+
 class AccountUser {
-    var fullname : String?= null
-    var email : String? = null
-    var favoriteList = ArrayList<News>()
+    var fullname : String?= ""
+    var email : String? = ""
+    var markList = ArrayList<News>()
+    var avatarUrl : String? = ""
 }

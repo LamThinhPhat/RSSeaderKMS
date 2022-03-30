@@ -4,15 +4,20 @@ import android.app.ProgressDialog
 import android.content.Context
 import android.os.AsyncTask
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ssreaderkms.Adapters.MyNewsAdapter
 import com.example.ssreaderkms.Models.News
 import com.example.ssreaderkms.Services.XMLDOMParser
+import dmax.dialog.SpotsDialog
 import org.w3c.dom.Element
 import java.io.BufferedReader
 import java.io.InputStreamReader
@@ -32,52 +37,33 @@ class SSRReaderFragment : Fragment() {
         currentContext = this.context
         listNewsRV = view.findViewById<RecyclerView>(R.id.NewsRV)
 
-        ReadRSS().execute("https://vnexpress.net/rss/tin-moi-nhat.rss")
+        newsAdapter = MyNewsAdapter(listNewsItem)
+
+        listNewsRV!!.adapter = newsAdapter
+        listNewsRV!!.layoutManager =LinearLayoutManager(currentContext,LinearLayoutManager.VERTICAL,false)
+
+        newsAdapter.onMarkClick = { newsItem ->
+        }
+
+        alertDialog = SpotsDialog.Builder().setContext(activity)
+            .setCancelable(false)
+            .setMessage("Uploading")
+            .build()
+
+        urlEdt = view.findViewById(R.id.urlEditText)
+        searchBtn = view.findViewById(R.id.SearchUrlBtn)
 
         return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-    }
-
-    class ReadRSS : AsyncTask<String, Int, String>() {
-        override fun doInBackground(vararg p0: String?): String {
-            return ReadDataFromURL(p0[0].toString())!!
-        }
-
-        override fun onPostExecute(result: String?) {
-            val parser = XMLDOMParser()
-            val document = parser.getDocument(result)
-
-            var nodeList = document!!.getElementsByTagName("item")
-            var nodeListDescription = document!!.getElementsByTagName("description")
-            var str: String = ""
-
-            for (i in 0..nodeList.length-1)
-            {
-                var temp = News()
-                val cdata :String = nodeListDescription.item(i).textContent
-
-                val checkPaternImg = Pattern.compile("<img[^>]+src\\s*=\\s*['\"]([^'\"]+)['\"][^>]*>") //Patern for image
-                val matcher :Matcher = checkPaternImg.matcher(cdata)
-
-                if (matcher.find())
-                {
-                    temp.imageURL = matcher.group(1).toString()
-                }
-                val element = nodeList.item(i) as Element
-                str+= parser.getValue(element, "title")
-                temp.title = parser.getValue(element, "title").toString()
-                temp.linkPage = parser.getValue(element,"link").toString()
-                listNewsItem.add(temp)
-            }
-
-            var newsAdapter =MyNewsAdapter(listNewsItem)
-
-            listNewsRV!!.adapter = newsAdapter
-
-            listNewsRV!!.layoutManager =LinearLayoutManager(currentContext,LinearLayoutManager.VERTICAL,false)
-            super.onPostExecute(result)
+        searchBtn!!.setOnClickListener {
+            listNewsItem.clear()
+            var tempUrl = urlEdt!!.text.toString()
+            if (!tempUrl.contains("https://"))
+                tempUrl = "https://${tempUrl}"
+            alertDialog.show()
+            ReadRSS().execute(tempUrl)
         }
     }
 
@@ -85,6 +71,11 @@ class SSRReaderFragment : Fragment() {
         var listNewsItem = ArrayList<News>()
         var listNewsRV : RecyclerView? = null
         var currentContext: Context? = null
+        lateinit var newsAdapter : MyNewsAdapter
+        var urlEdt : EditText? = null
+        var searchBtn : Button? = null
+
+        lateinit var alertDialog :android.app.AlertDialog
 
         fun newInstance(){
 
@@ -112,6 +103,53 @@ class SSRReaderFragment : Fragment() {
                 e.printStackTrace()
             }
             return content.toString()
+        }
+    }
+
+    //Read RSS object
+    class ReadRSS : AsyncTask<String, Int, String>() {
+        override fun doInBackground(vararg p0: String?): String {
+            return ReadDataFromURL(p0[0].toString())!!
+        }
+
+        override fun onPostExecute(result: String?) {
+            try {
+                val parser = XMLDOMParser()
+                val document = parser.getDocument(result)
+
+                var nodeList = document!!.getElementsByTagName("item")
+                var nodeListDescription = document!!.getElementsByTagName("description")
+                var str: String = ""
+
+                for (i in 0..nodeList.length-1)
+                {
+                    var temp = News()
+                    val cdata :String = nodeListDescription.item(i).textContent
+
+                    val checkPaternImg = Pattern.compile("<img[^>]+src\\s*=\\s*['\"]([^'\"]+)['\"][^>]*>") //Patern for image
+                    val matcher :Matcher = checkPaternImg.matcher(cdata)
+
+                    if (matcher.find())
+                    {
+                        temp.imageURL = matcher.group(1).toString()
+                    }
+                    val element = nodeList.item(i) as Element
+                    str+= parser.getValue(element, "title")
+                    temp.title = parser.getValue(element, "title").toString()
+                    temp.linkPage = parser.getValue(element,"link").toString()
+                    listNewsItem.add(temp)
+                }
+                newsAdapter.notifyDataSetChanged()
+                alertDialog.dismiss()
+            }
+            catch (e:Throwable)
+            {
+                alertDialog.dismiss()
+                Toast.makeText(currentContext, "Invalid URL", Toast.LENGTH_LONG).show()
+                Log.e("Error", e.message.toString())
+            }
+
+            super.onPostExecute(result)
         }
     }
 }

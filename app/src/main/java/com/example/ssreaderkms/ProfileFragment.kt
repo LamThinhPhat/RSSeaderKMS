@@ -1,59 +1,74 @@
 package com.example.ssreaderkms
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.LinearLayout
+import android.widget.TextView
+import com.example.ssreaderkms.SplashActivity.Companion.accountUserLogin
+import com.google.firebase.auth.FirebaseAuth
+import com.squareup.picasso.Picasso
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [ProfileFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ProfileFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
-
+    lateinit var accountAvatar : ImageView
+    lateinit var nameAccount : TextView
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false)
+        val view = inflater.inflate(R.layout.fragment_profile, container, false)
+
+        val accountInfoRow = view.findViewById<LinearLayout>(R.id.accountInfoRow)
+        val favoriteRow = view.findViewById<LinearLayout>(R.id.favoriteRow)
+        val logoutRows = view.findViewById<LinearLayout>(R.id.logoutRows)
+        accountAvatar = view.findViewById(R.id.accountAvatar)
+        nameAccount = view.findViewById(R.id.nameAccount)
+        nameAccount.visibility = View.VISIBLE
+
+
+        accountInfoRow.setOnClickListener {
+            val intent = Intent(activity, ChangeInfoActivity::class.java)
+            startActivity(intent)
+        }
+
+        favoriteRow.setOnClickListener {
+
+        }
+
+        logoutRows.setOnClickListener {
+            FirebaseAuth.getInstance().signOut()
+            val intent = Intent(activity,LoginActivity::class.java)
+            startActivity(intent)
+            requireActivity().finish()
+        }
+
+        return view
     }
 
+    override fun onResume() {
+        super.onResume()
+
+        nameAccount.text = accountUserLogin!!.fullname
+
+        if(!accountUserLogin!!.avatarUrl.equals(""))
+        {
+
+            Picasso.get().load(accountUserLogin!!.avatarUrl)
+                .error(R.drawable.ic_profile).into(accountAvatar)
+        }
+        else
+        {
+            accountAvatar.setImageResource(R.drawable.ic_profile)
+        }
+
+    }
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ProfileFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ProfileFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+        fun newInstance(){
+
+        }
     }
 }

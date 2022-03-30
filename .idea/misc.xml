@@ -3,6 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Mobile/SSReaderKMS/app/src/main/res/drawable/borderRow.xml" value="0.194" />
+        <entry key="..\:/Mobile/SSReaderKMS/app/src/main/res/drawable/borderrow.xml" value="0.144" />
+        <entry key="..\:/Mobile/SSReaderKMS/app/src/main/res/drawable/ic_edit.xml" value="0.121" />
+        <entry key="..\:/Mobile/SSReaderKMS/app/src/main/res/drawable/ic_home.xml" value="0.121" />
+        <entry key="..\:/Mobile/SSReaderKMS/app/src/main/res/drawable/ic_mark.xml" value="0.121" />
+        <entry key="..\:/Mobile/SSReaderKMS/app/src/main/res/drawable/ic_profile.xml" value="0.194" />
+        <entry key="..\:/Mobile/SSReaderKMS/app/src/main/res/drawable/ic_unmark.xml" value="0.121" />
+        <entry key="..\:/Mobile/SSReaderKMS/app/src/main/res/drawable/my_custom_border.xml" value="0.136" />
+        <entry key="..\:/Mobile/SSReaderKMS/app/src/main/res/layout/activity_change_info.xml" value="0.2" />
         <entry key="..\:/Mobile/SSReaderKMS/app/src/main/res/layout/activity_content.xml" value="0.22056159420289856" />
         <entry key="..\:/Mobile/SSReaderKMS/app/src/main/res/layout/activity_main.xml" value="0.22056159420289856" />
         <entry key="..\:/Mobile/SSReaderKMS/app/src/main/res/layout/activity_register.xml" value="0.22056159420289856" />

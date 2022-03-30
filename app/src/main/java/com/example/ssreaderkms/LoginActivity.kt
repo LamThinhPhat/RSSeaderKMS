@@ -9,11 +9,14 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
+import com.example.ssreaderkms.Models.AccountUser
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.ktx.database
-import com.google.firebase.ktx.Firebase
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
-class MainActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
 
     private var mAuth: FirebaseAuth? = null
 
@@ -26,7 +29,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_login)
 
 
 
@@ -73,6 +76,20 @@ class MainActivity : AppCompatActivity() {
 
         mAuth?.signInWithEmailAndPassword(email, password)
             ?.addOnSuccessListener {
+                val userFromFireAuth = FirebaseAuth.getInstance().currentUser
+
+                val accountRef = FirebaseDatabase.getInstance().getReference("Account/${userFromFireAuth!!.uid}")
+
+
+                accountRef.addListenerForSingleValueEvent(object : ValueEventListener {
+                    override fun onDataChange(snapshot: DataSnapshot) {
+                        SplashActivity.accountUserLogin = snapshot.getValue(AccountUser::class.java)!!
+                    }
+
+                    override fun onCancelled(error: DatabaseError) {
+                        Toast.makeText(this@LoginActivity,"" + error.message, Toast.LENGTH_SHORT).show()
+                    }
+                })
                 progressBar.visibility = View.GONE
                 startActivity(Intent(this, ContentActivity::class.java))
             }
