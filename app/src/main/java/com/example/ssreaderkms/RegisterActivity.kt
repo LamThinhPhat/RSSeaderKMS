@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ProgressBar
+import android.widget.Toast
 import com.example.ssreaderkms.Models.AccountUser
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.ktx.database
@@ -88,7 +89,8 @@ class RegisterActivity : AppCompatActivity() {
             }
             ?.addOnFailureListener { e ->
                 progressBar.visibility = View.GONE
-                Log.i("Error Register", e.message.toString())
+                Toast.makeText(this, "Email is existed", Toast.LENGTH_LONG)
+                    .show()
             }
 
     }
