@@ -39,7 +39,7 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 ## Getting Started
 
-[![Getting Started][Login | height=100]]
+[![Getting Started][Login | height=100]]()
 
 Firstly, we will start at Login Screen
 
