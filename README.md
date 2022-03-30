@@ -39,95 +39,95 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 ## Getting Started
 
-[![Getting Started][Login]]()
 
 Firstly, we will start at Login Screen
 
+[![Getting Started][Login]]
 
 
 ## Register Account
 
 If you currently don't have an account, press the "Register" button to transit to register activity
 
-[![Register Account][register = x150]]
+[![Register Account][register]
 
 ## Input information
 
 We will input name, email and password which we're gonna use to login
 
-[![Input information][register_input = x150]]
+[![Input information][register_input]]
 
 ## Log in
 
 After successfully registering, we will use email and password which we've just used to login
 
-[![Log in][login_input = x150]]
+[![Log in][login_input]]
 
 ## At main page
 
 After logging in, this will be the mainpage.
 
-[![At main page][mainpage = x150]]
+[![At main page][mainpage]]
 
 ## input URL and press "Search" button
 
 Input the URL which you want to access and the press "Search" to get object from URL
 
-[![input URL and press "Search" button][input_url_news = x150]]
+[![input URL and press "Search" button][input_url_news]]
 
 ## Watch news's content
 
 After the application has done searching news, click one news on the list to access to the content page
 
-[![Watch news's content][detail_news = x150]]
+[![Watch news's content][detail_news]]
 
 ## At the bottom bar
 
 At the bottom bar, there will be two icon. Click "Profile" icon to change to "Profile" fragment
 
-[![At the bottom bar][profile = x150]]
+[![At the bottom bar][profile]]
 
 ## Edit Info Account
 
 Click "Account" row in "Profile" fragment to change to Edit Info Activity
 
-[![Edit Info Account][edit_name = x150]]
+[![Edit Info Account][edit_name]]
 
 ## Change Avatar
 
 Click default profile Image to start choosing your own avatar
 
-[![Change Avatar][pick_avatar = x150]]
+[![Change Avatar][pick_avatar]]
 
 ## After pick Avatar
 
 Default profile Image will be change to the image you've just picked and click "Edit info" button to save.
 
-[![After pick Avatar][after_pick = x150]]
+[![After pick Avatar][after_pick]]
 
 ## After save info
 
 As you can see, the avatar and name have been changed
 
-[![After save info][account_info_change = x150]]
+[![After save info][account_info_change]]
 
 ## Mark news for later
 
 At the main page, after searching the URL, you can mark any news for later by clicking the star on the right of each row. If you click the empty star which is not currently in account's favorite list then it'll change to full yellow star and vice versa.
 
-[![Mark news for later][click_star = x150]]
+[![Mark news for later][click_star]]
 
 ## Favorite news
 
 Click "Favorite" row in "Profile" fragment to change to Favorite news Activity
 
-[![Favorite news][In_Favorite = x150]]
+[![Favorite news][In_Favorite]]
 
 ## Unmark a news in Favorite List
 
 In Favorite list, If you click the star, the news will be remove from account's Favorite list
 
-[![Unmark a news in Favorite List][after_unmark = x150]]
+[![Unmark a news in Favorite List][after_unmark]]
 
 
 
