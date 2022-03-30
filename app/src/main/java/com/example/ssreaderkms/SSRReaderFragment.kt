@@ -2,6 +2,7 @@ package com.example.ssreaderkms
 
 import android.app.ProgressDialog
 import android.content.Context
+import android.content.Intent
 import android.os.AsyncTask
 import android.os.Bundle
 import android.util.Log
@@ -12,11 +13,15 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ssreaderkms.Adapters.MyNewsAdapter
 import com.example.ssreaderkms.Models.News
 import com.example.ssreaderkms.Services.XMLDOMParser
+import com.example.ssreaderkms.SplashActivity.Companion.accountUserLogin
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 import dmax.dialog.SpotsDialog
 import org.w3c.dom.Element
 import java.io.BufferedReader
@@ -37,12 +42,34 @@ class SSRReaderFragment : Fragment() {
         currentContext = this.context
         listNewsRV = view.findViewById<RecyclerView>(R.id.NewsRV)
 
-        newsAdapter = MyNewsAdapter(listNewsItem)
+        newsAdapter = MyNewsAdapter(listNewsItem, currentContext!!)
 
         listNewsRV!!.adapter = newsAdapter
         listNewsRV!!.layoutManager =LinearLayoutManager(currentContext,LinearLayoutManager.VERTICAL,false)
 
-        newsAdapter.onMarkClick = { newsItem ->
+        listNewsRV!!.addItemDecoration(
+            DividerItemDecoration(currentContext,
+            DividerItemDecoration.VERTICAL)
+        )
+
+        newsAdapter.onMarkClick = { newsItem, markIsCHecked -> //Click the star
+            if (markIsCHecked)
+            {
+                accountUserLogin!!.markList.add(newsItem)
+                updateMarkListInDB()
+            }
+            else
+            {
+                accountUserLogin!!.markList.remove(newsItem)
+                updateMarkListInDB()
+            }
+        }
+
+        newsAdapter.onClickNews = {linkPage ->
+            val intent = Intent(activity, WebViewActivity::class.java)
+            intent.putExtra("UrlPage", linkPage)
+            startActivity(intent)
+
         }
 
         alertDialog = SpotsDialog.Builder().setContext(activity)
@@ -54,6 +81,12 @@ class SSRReaderFragment : Fragment() {
         searchBtn = view.findViewById(R.id.SearchUrlBtn)
 
         return view
+    }
+
+    private fun updateMarkListInDB() {
+        val uid = FirebaseAuth.getInstance().currentUser!!.uid
+        val accountRef = FirebaseDatabase.getInstance().getReference("Account/${uid}")
+        accountRef.setValue(accountUserLogin)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -124,7 +157,7 @@ class SSRReaderFragment : Fragment() {
                 for (i in 0..nodeList.length-1)
                 {
                     var temp = News()
-                    val cdata :String = nodeListDescription.item(i).textContent
+                    val cdata :String = nodeListDescription.item(i+1).textContent
 
                     val checkPaternImg = Pattern.compile("<img[^>]+src\\s*=\\s*['\"]([^'\"]+)['\"][^>]*>") //Patern for image
                     val matcher :Matcher = checkPaternImg.matcher(cdata)
@@ -132,12 +165,12 @@ class SSRReaderFragment : Fragment() {
                     if (matcher.find())
                     {
                         temp.imageURL = matcher.group(1).toString()
+                        val element = nodeList.item(i) as Element
+                        str+= parser.getValue(element, "title")
+                        temp.title = parser.getValue(element, "title").toString()
+                        temp.linkPage = parser.getValue(element,"link").toString()
+                        listNewsItem.add(temp)
                     }
-                    val element = nodeList.item(i) as Element
-                    str+= parser.getValue(element, "title")
-                    temp.title = parser.getValue(element, "title").toString()
-                    temp.linkPage = parser.getValue(element,"link").toString()
-                    listNewsItem.add(temp)
                 }
                 newsAdapter.notifyDataSetChanged()
                 alertDialog.dismiss()

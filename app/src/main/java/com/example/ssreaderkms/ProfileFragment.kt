@@ -36,14 +36,16 @@ class ProfileFragment : Fragment() {
         }
 
         favoriteRow.setOnClickListener {
-
+            val intent = Intent(activity, FavoriteNewsActivity::class.java)
+            startActivity(intent)
         }
 
         logoutRows.setOnClickListener {
             FirebaseAuth.getInstance().signOut()
             val intent = Intent(activity,LoginActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            requireActivity().finishAffinity();
             startActivity(intent)
-            requireActivity().finish()
         }
 
         return view

@@ -8,10 +8,10 @@
     tools:context=".ChangeInfoActivity">
 
     <ImageView
+        android:id="@+id/backToPrevEditInfo"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginLeft="15dp"
-        android:id="@+id/backToPrevEditInfo"
         android:layout_marginTop="15dp"
         android:src="@drawable/ic_back_arrow" />
 
@@ -57,11 +57,12 @@
     </LinearLayout>
 
     <Button
-        android:layout_width="wrap_content"
         android:id="@+id/editInfobtn"
-        android:layout_below="@+id/EditInfoLinear"
-        android:layout_marginTop="40dp"
-        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Edit Info"/>
+        android:layout_below="@+id/EditInfoLinear"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="40dp"
+        android:text="Edit Info"
+        android:background="@drawable/shape_btn"/>
 </RelativeLayout>
