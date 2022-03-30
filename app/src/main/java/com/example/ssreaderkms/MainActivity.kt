@@ -28,6 +28,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
+
         emailEditText = findViewById(R.id.LoginMailedt)
         passwordEditText = findViewById(R.id.LoginPassedt)
         loginBtn = findViewById(R.id.LoginBtn)

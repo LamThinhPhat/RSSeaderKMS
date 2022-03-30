@@ -29,16 +29,11 @@ class SSRReaderFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         var view = inflater.inflate(R.layout.fragment_s_s_r_reader, container, false)
+        currentContext = this.context
+        listNewsRV = view.findViewById<RecyclerView>(R.id.NewsRV)
 
-        val temp = ReadRSS().execute("https://vnexpress.net/rss/tin-moi-nhat.rss").get()
+        ReadRSS().execute("https://vnexpress.net/rss/tin-moi-nhat.rss")
 
-        val listNewsRV = view.findViewById<RecyclerView>(R.id.NewsRV)
-
-        var newsAdapter =MyNewsAdapter(listNewsItem)
-
-        listNewsRV.adapter = newsAdapter
-
-        listNewsRV.layoutManager =LinearLayoutManager(activity,LinearLayoutManager.VERTICAL,false)
         return view
     }
 
@@ -76,12 +71,21 @@ class SSRReaderFragment : Fragment() {
                 temp.linkPage = parser.getValue(element,"link").toString()
                 listNewsItem.add(temp)
             }
+
+            var newsAdapter =MyNewsAdapter(listNewsItem)
+
+            listNewsRV!!.adapter = newsAdapter
+
+            listNewsRV!!.layoutManager =LinearLayoutManager(currentContext,LinearLayoutManager.VERTICAL,false)
             super.onPostExecute(result)
         }
     }
 
     companion object {
         var listNewsItem = ArrayList<News>()
+        var listNewsRV : RecyclerView? = null
+        var currentContext: Context? = null
+
         fun newInstance(){
 
         }
