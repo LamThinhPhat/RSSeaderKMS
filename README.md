@@ -35,12 +35,6 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 
 <!-- GETTING STARTED -->
-## Getting Started
-
-Firstly, we will start at Login Screen
-
-<img src="Login" alt="drawing" height="200" width="200"/>
-
 
 
 ## Getting Started
