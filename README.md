@@ -47,7 +47,7 @@ Firstly, we will start at Login Screen
 
 Firstly, we will start at Login Screen
 
-[![Product Name Screen Shot][Login = x150]]
+[![][Login | height=100]]
 
 ## Register Account
 
