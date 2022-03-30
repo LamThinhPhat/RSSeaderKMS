@@ -13,7 +13,6 @@ The project is not build with any special library so the project doesn't have to
 
 
 
-
 ### Built With
 
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
@@ -22,125 +21,135 @@ This section should list any major frameworks/libraries used to bootstrap your p
 * Picasso (Library - Load image from URL)
 * SpotDialog (Library - Show progress dialog)
 * Android Studio (IDE)
+* Firebase Authentication (For Log in and Sign up)
+* Firebase Database Realtime (For storing data's infomation)
 
 
 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-[![Product Name Screen Shot][register_input]]
+Firstly, we will start at Login Screen
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
-
-### Installation
-
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
-
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/your_username_/Project-Name.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
-
-<p align="right">(<a href="#top">back to top</a>)</p>
+<img src="Login" alt="drawing" height="200" width="200"/>
 
 
 
-<!-- USAGE EXAMPLES -->
-## Usage
+## Getting Started
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+Firstly, we will start at Login Screen
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+<img src="Login" alt="drawing" height="200" width="200"/>
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+## Register Account
 
+If you currently don't have an account, press the "Register" button to transit to register activity
 
+<img src="register" alt="drawing" height="200" width="200"/>
 
-<!-- ROADMAP -->
-## Roadmap
+## Input information
 
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
+We will input name, email and password which we're gonna use to login
 
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
+<img src="register_input" alt="drawing" height="200" width="200"/>
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+## Log in
 
+After successfully registering, we will use email and password which we've just used to login
 
+<img src="login_input" alt="drawing" height="200" width="200"/>
 
-<!-- CONTRIBUTING -->
-## Contributing
+## At main page
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+After logging in, this will be the mainpage.
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
+<img src="mainpage" alt="drawing" height="200" width="200"/>
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+## input URL and press "Search" button
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+Input the URL which you want to access and the press "Search" to get object from URL
 
+<img src="input_url_news" alt="drawing" height="200" width="200"/>
 
+## Watch news's content
 
-<!-- LICENSE -->
-## License
+After the application has done searching news, click one news on the list to access to the content page
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+<img src="detail_news" alt="drawing" height="200" width="200"/>
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+## At the bottom bar
+
+At the bottom bar, there will be two icon. Click "Profile" icon to change to "Profile" fragment
+
+<img src="profile" alt="drawing" height="200" width="200"/>
+
+## Edit Info Account
+
+Click "Account" row in "Profile" fragment to change to Edit Info Activity
+
+<img src="edit_name" alt="drawing" height="200" width="200"/>
+
+## Change Avatar
+
+Click default profile Image to start choosing your own avatar
+
+<img src="pick_avatar" alt="drawing" height="200" width="200"/>
+
+## After pick Avatar
+
+Default profile Image will be change to the image you've just picked and click "Edit info" button to save.
+
+<img src="after_pick" alt="drawing" height="200" width="200"/>
+
+## After save info
+
+As you can see, the avatar and name have been changed
+
+<img src="account_info_change" alt="drawing" height="200" width="200"/>
+
+## Mark news for later
+
+At the main page, after searching the URL, you can mark any news for later by clicking the star on the right of each row. If you click the empty star which is not currently in account's favorite list then it'll change to full yellow star and vice versa.
+
+<img src="click_star" alt="drawing" height="200" width="200"/>
+
+## Favorite news
+
+Click "Favorite" row in "Profile" fragment to change to Favorite news Activity
+
+<img src="In_Favorite" alt="drawing" height="200" width="200"/>
+
+## Unmark a news in Favorite List
+
+In Favorite list, If you click the star, the news will be remove from account's Favorite list
+
+<img src="after_unmark" alt="drawing" height="200" width="200"/>
 
 
 
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+Lam Thinh Phat - [Phát Sankar](https://www.facebook.com/phat.sankar/) - lamthinhphat2001@gmail.com
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [https://github.com/LamThinhPhat/RSSeaderKMS](https://github.com/LamThinhPhat/RSSeaderKMS)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
-[account_info_change]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
-[after_pick]: https://github.com/github_username/repo_name/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge
-[click_star]: https://github.com/github_username/repo_name/network/members
-[detail_news]: https://img.shields.io/github/stars/github_username/repo_name.svg?style=for-the-badge
-[edit_name]: https://github.com/github_username/repo_name/stargazers
-[In_Favorite]: https://img.shields.io/github/issues/github_username/repo_name.svg?style=for-the-badge
-[input_url_news]: https://github.com/github_username/repo_name/issues
-[Login]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
-[login_input]: https://github.com/github_username/repo_name/blob/master/LICENSE.txt
-[mainpage]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[pick_avatar]: https://linkedin.com/in/linkedin_username
-[profile]: images/screenshot.png
-[register]: images/screenshot.png
+[account_info_change]: ScreeshotProduct/account_info_change.png
+[after_unmark]: ScreeshotProduct/after_unmark.png
+[after_pick]: ScreeshotProduct/after_pick.png
+[click_star]: ScreeshotProduct/click_star.png
+[detail_news]: ScreeshotProduct/detail_news.png
+[edit_name]: ScreeshotProduct/edit_name.png
+[In_Favorite]: ScreeshotProduct/In_Favorite.png
+[input_url_news]: ScreeshotProduct/input_url_news.png
+[Login]: ScreeshotProduct/Login.png
+[login_input]: ScreeshotProduct/login_input.png
+[mainpage]: ScreeshotProduct/mainpage.png
+[pick_avatar]: ScreeshotProduct/pick_avatar.png
+[profile]: ScreeshotProduct/profile.png
+[register]: ScreeshotProduct/register.png
 [register_input]: ScreeshotProduct/register_input.png
 
