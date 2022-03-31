@@ -42,109 +42,104 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 Firstly, we will start at Login Screen
 
-<img src="images/Login.png" height="60">
+<img src="images/Login.png" height="500">
 
 
 ## Register Account
 
 If you currently don't have an account, press the "Register" button to transit to register activity
 
-[![Register Account][register]
+
+<img src="images/register.png" height="500">
 
 ## Input information
 
 We will input name, email and password which we're gonna use to login
 
-[![Input information][register_input]]
+
+<img src="images/register_input.png" height="500">
 
 ## Log in
 
 After successfully registering, we will use email and password which we've just used to login
 
-[![Log in][login_input]]
+
+<img src="images/login_input.png" height="500">
 
 ## At main page
 
 After logging in, this will be the mainpage.
 
-[![At main page][mainpage]]
+
+<img src="images/mainpage.png" height="500">
 
 ## input URL and press "Search" button
 
 Input the URL which you want to access and the press "Search" to get object from URL
 
-[![input URL and press "Search" button][input_url_news]]
+<img src="images/input_url_news.png" height="500">
 
 ## Watch news's content
 
 After the application has done searching news, click one news on the list to access to the content page
 
-[![Watch news's content][detail_news]]
+
+<img src="images/detail_news.png" height="500">
 
 ## At the bottom bar
 
 At the bottom bar, there will be two icon. Click "Profile" icon to change to "Profile" fragment
 
-[![At the bottom bar][profile]]
+
+<img src="images/profile.png" height="500">
 
 ## Edit Info Account
 
 Click "Account" row in "Profile" fragment to change to Edit Info Activity
 
-[![Edit Info Account][edit_name]]
+
+<img src="images/edit_name.png" height="500">
 
 ## Change Avatar
 
 Click default profile Image to start choosing your own avatar
 
-[![Change Avatar][pick_avatar]]
+
+<img src="images/pick_avatar.png" height="500">
 
 ## After pick Avatar
 
 Default profile Image will be change to the image you've just picked and click "Edit info" button to save.
 
-[![After pick Avatar][after_pick]]
+
+<img src="images/after_pick.png" height="500">
 
 ## After save info
 
 As you can see, the avatar and name have been changed
 
-[![After save info][account_info_change]]
+
+<img src="images/Login.png" account_info_change="500">
 
 ## Mark news for later
 
 At the main page, after searching the URL, you can mark any news for later by clicking the star on the right of each row. If you click the empty star which is not currently in account's favorite list then it'll change to full yellow star and vice versa.
 
-[![Mark news for later][click_star]]
+
+<img src="images/click_star.png" height="500">
 
 ## Favorite news
 
 Click "Favorite" row in "Profile" fragment to change to Favorite news Activity
 
-[![Favorite news][In_Favorite]]
+
+<img src="images/In_Favorite.png" height="500">
 
 ## Unmark a news in Favorite List
 
 In Favorite list, If you click the star, the news will be remove from account's Favorite list
 
-[![Unmark a news in Favorite List][after_unmark]]
 
+<img src="images/after_unmark.png" height="500">
 
-
-
-[account_info_change]: images/account_info_change.png
-[after_unmark]: images/after_unmark.png
-[after_pick]: images/after_pick.png
-[click_star]: images/click_star.png
-[detail_news]: images/detail_news.png
-[edit_name]: images/edit_name.png
-[In_Favorite]: images/In_Favorite.png
-[input_url_news]: images/input_url_news.png
-[Login]: images/Login.png
-[login_input]: images/login_input.png
-[mainpage]: images/mainpage.png
-[pick_avatar]: images/pick_avatar.png
-[profile]: images/profile.png
-[register]: images/register.png
-[register_input]: images/register_input.png
 
