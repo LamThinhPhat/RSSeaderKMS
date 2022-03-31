@@ -75,7 +75,7 @@ After logging in, this will be the mainpage.
 
 ## input URL and press "Search" button
 
-Input the URL which you want to access and the press "Search" to get object from URL
+Input the URL which you want to access and the press "Search" to get object from URL. URL example: "https://vnexpress.net/rss/tin-moi-nhat.rss"
 
 <img src="images/input_url_news.png" height="500">
 
@@ -119,7 +119,7 @@ Default profile Image will be change to the image you've just picked and click "
 As you can see, the avatar and name have been changed
 
 
-<img src="images/Login.png" account_info_change="500">
+<img src="images/account_info_change.png" account_info_change="500">
 
 ## Mark news for later
 
