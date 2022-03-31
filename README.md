@@ -119,7 +119,7 @@ Default profile Image will be change to the image you've just picked and click "
 As you can see, the avatar and name have been changed
 
 
-<img src="images/account_info_change.png" account_info_change="500">
+<img src="images/account_info_change.png" height="500">
 
 ## Mark news for later
 
