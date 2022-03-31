@@ -1,9 +1,6 @@
 package com.example.ssreaderkms.Adapters
 
-import android.app.Activity
 import android.content.Context
-import android.graphics.drawable.Drawable
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,7 +10,7 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ssreaderkms.Models.News
 import com.example.ssreaderkms.R
-import com.example.ssreaderkms.SplashActivity.Companion.accountUserLogin
+import com.example.ssreaderkms.Activities.SplashActivity.Companion.accountUserLogin
 import com.squareup.picasso.Picasso
 
 class MyNewsAdapter(private val NewsList : List<News>

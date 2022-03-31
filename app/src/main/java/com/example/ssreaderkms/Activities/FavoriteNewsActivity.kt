@@ -1,4 +1,4 @@
-package com.example.ssreaderkms
+package com.example.ssreaderkms.Activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -8,7 +8,8 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ssreaderkms.Adapters.MyNewsAdapter
-import com.example.ssreaderkms.SplashActivity.Companion.accountUserLogin
+import com.example.ssreaderkms.Activities.SplashActivity.Companion.accountUserLogin
+import com.example.ssreaderkms.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 

@@ -1,4 +1,4 @@
-package com.example.ssreaderkms
+package com.example.ssreaderkms.Activities
 
 import android.content.Intent
 import android.net.Uri
@@ -6,17 +6,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.util.Log
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
-import com.example.ssreaderkms.SplashActivity.Companion.accountUserLogin
-import com.google.android.gms.tasks.OnCompleteListener
+import com.example.ssreaderkms.Activities.SplashActivity.Companion.accountUserLogin
+import com.example.ssreaderkms.R
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage

@@ -1,6 +1,5 @@
-package com.example.ssreaderkms
+package com.example.ssreaderkms.Fragments
 
-import android.app.ProgressDialog
 import android.content.Context
 import android.content.Intent
 import android.os.AsyncTask
@@ -19,7 +18,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.ssreaderkms.Adapters.MyNewsAdapter
 import com.example.ssreaderkms.Models.News
 import com.example.ssreaderkms.Services.XMLDOMParser
-import com.example.ssreaderkms.SplashActivity.Companion.accountUserLogin
+import com.example.ssreaderkms.Activities.SplashActivity.Companion.accountUserLogin
+import com.example.ssreaderkms.Activities.WebViewActivity
+import com.example.ssreaderkms.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import dmax.dialog.SpotsDialog
@@ -48,7 +49,8 @@ class SSRReaderFragment : Fragment() {
         listNewsRV!!.layoutManager =LinearLayoutManager(currentContext,LinearLayoutManager.VERTICAL,false)
 
         listNewsRV!!.addItemDecoration(
-            DividerItemDecoration(currentContext,
+            DividerItemDecoration(
+                currentContext,
             DividerItemDecoration.VERTICAL)
         )
 
@@ -65,7 +67,7 @@ class SSRReaderFragment : Fragment() {
             }
         }
 
-        newsAdapter.onClickNews = {linkPage ->
+        newsAdapter.onClickNews = { linkPage ->
             val intent = Intent(activity, WebViewActivity::class.java)
             intent.putExtra("UrlPage", linkPage)
             startActivity(intent)

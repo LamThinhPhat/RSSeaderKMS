@@ -1,4 +1,4 @@
-package com.example.ssreaderkms
+package com.example.ssreaderkms.Activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -10,6 +10,7 @@ import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
 import com.example.ssreaderkms.Models.AccountUser
+import com.example.ssreaderkms.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError

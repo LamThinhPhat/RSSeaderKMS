@@ -12,16 +12,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SSReaderKMS">
         <activity
-            android:name=".FavoriteNewsActivity"
+            android:name=".Activities.FavoriteNewsActivity"
             android:exported="false" />
         <activity
-            android:name=".WebViewActivity"
+            android:name=".Activities.WebViewActivity"
             android:exported="false" />
         <activity
-            android:name=".ChangeInfoActivity"
+            android:name=".Activities.ChangeInfoActivity"
             android:exported="false" />
         <activity
-            android:name=".SplashActivity"
+            android:name=".Activities.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,13 +30,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ContentActivity"
+            android:name=".Activities.ContentActivity"
             android:exported="false" />
         <activity
-            android:name=".RegisterActivity"
+            android:name=".Activities.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".Activities.LoginActivity"
             android:exported="false" />
     </application>
 

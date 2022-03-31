@@ -7,12 +7,12 @@
 
     <fragment
         android:id="@+id/SSRReaderFragment"
-        android:name="com.example.ssreaderkms.SSRReaderFragment"
+        android:name="com.example.ssreaderkms.Fragments.SSRReaderFragment"
         android:label="fragment_s_s_r_reader"
         tools:layout="@layout/fragment_s_s_r_reader" />
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.ssreaderkms.ProfileFragment"
+        android:name="com.example.ssreaderkms.Fragments.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
 </navigation>

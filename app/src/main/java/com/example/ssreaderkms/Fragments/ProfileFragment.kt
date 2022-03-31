@@ -1,4 +1,4 @@
-package com.example.ssreaderkms
+package com.example.ssreaderkms.Fragments
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,7 +9,11 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import com.example.ssreaderkms.SplashActivity.Companion.accountUserLogin
+import com.example.ssreaderkms.Activities.ChangeInfoActivity
+import com.example.ssreaderkms.Activities.FavoriteNewsActivity
+import com.example.ssreaderkms.Activities.LoginActivity
+import com.example.ssreaderkms.Activities.SplashActivity.Companion.accountUserLogin
+import com.example.ssreaderkms.R
 import com.google.firebase.auth.FirebaseAuth
 import com.squareup.picasso.Picasso
 
@@ -42,7 +46,7 @@ class ProfileFragment : Fragment() {
 
         logoutRows.setOnClickListener {
             FirebaseAuth.getInstance().signOut()
-            val intent = Intent(activity,LoginActivity::class.java)
+            val intent = Intent(activity, LoginActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             requireActivity().finishAffinity();
             startActivity(intent)
