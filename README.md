@@ -42,7 +42,7 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 Firstly, we will start at Login Screen
 
-[![Getting Started][Login]]
+<img src="images/Login.png" height="60">
 
 
 ## Register Account
