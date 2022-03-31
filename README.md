@@ -8,9 +8,6 @@ Lam Thinh Phat - [Phát Sankar](https://www.facebook.com/phat.sankar/) - lamthin
 
 Project Link: [https://github.com/LamThinhPhat/RSSeaderKMS](https://github.com/LamThinhPhat/RSSeaderKMS)
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
 
 
 <!-- ABOUT THE PROJECT -->
@@ -38,6 +35,13 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 
 ## Getting Started
+
+To build project, you open with "Android studio" and wait for it to automatically install plugins, settings and then press "Play" button to install the project to your emulator
+
+<img src="images/Build_project.png" height="500">
+
+
+## After the project is build
 
 
 Firstly, we will start at Login Screen
