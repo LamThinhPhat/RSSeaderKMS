@@ -33,7 +33,10 @@
             android:textColor="@color/black"
             android:id="@+id/RegisFullnameEdt"
             android:backgroundTint="@color/black"
-            android:hint="Full name"/>
+            android:hint="Full name"
+            android:maxLines="1"
+            android:lines="1"
+            android:singleLine="true"/>
 
 
         <EditText
@@ -43,7 +46,10 @@
             android:id="@+id/RegisMailedt"
             android:textColor="@color/black"
             android:backgroundTint="@color/black"
-            android:hint="Email"/>
+            android:hint="Email"
+            android:maxLines="1"
+            android:lines="1"
+            android:singleLine="true"/>
 
         <EditText
             android:layout_width="380dp"
@@ -53,7 +59,10 @@
             android:inputType="textPassword"
             android:textColor="@color/black"
             android:backgroundTint="@color/black"
-            android:hint="Password"/>
+            android:hint="Password"
+            android:maxLines="1"
+            android:lines="1"
+            android:singleLine="true"/>
 
         <LinearLayout
             android:layout_marginTop="30dp"

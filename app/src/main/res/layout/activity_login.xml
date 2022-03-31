@@ -32,7 +32,10 @@
             android:id="@+id/LoginMailedt"
             android:backgroundTint="@color/black"
             android:textColor="@color/black"
-            android:hint="Email"/>
+            android:hint="Email"
+            android:maxLines="1"
+            android:lines="1"
+            android:singleLine="true"/>
 
         <EditText
             android:layout_width="380dp"
@@ -42,7 +45,10 @@
             android:inputType="textPassword"
             android:backgroundTint="@color/black"
             android:textColor="@color/black"
-            android:hint="Password"/>
+            android:hint="Password"
+            android:maxLines="1"
+            android:lines="1"
+            android:singleLine="true"/>
 
         <LinearLayout
             android:layout_marginTop="30dp"

@@ -57,13 +57,17 @@ class SSRReaderFragment : Fragment() {
         newsAdapter.onMarkClick = { newsItem, markIsCHecked -> //Click the star
             if (markIsCHecked)
             {
-                accountUserLogin!!.markList.add(newsItem)
-                updateMarkListInDB()
+                if (!accountUserLogin!!.markList.any { it.linkPage == newsItem.linkPage }) {
+                    accountUserLogin!!.markList.add(newsItem)
+                    updateMarkListInDB()
+                }
             }
             else
             {
-                accountUserLogin!!.markList.remove(newsItem)
-                updateMarkListInDB()
+                if (accountUserLogin!!.markList.any { it.linkPage == newsItem.linkPage }) {
+                    accountUserLogin!!.markList.remove(newsItem)
+                    updateMarkListInDB()
+                }
             }
         }
 

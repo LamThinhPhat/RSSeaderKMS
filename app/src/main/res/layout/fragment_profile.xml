@@ -35,6 +35,8 @@
             android:layout_marginLeft="15dp"
             android:text="Defaut Name Account"
             android:visibility="gone"
+            android:maxLines="1"
+            android:singleLine="true"
             android:textSize="30dp"
             android:textStyle="bold">
         </TextView>
